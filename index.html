@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatimah's 21st Birthday Card</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    width: 350px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .content {
+    display: none;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  .balloons {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Audio -->
+<audio id="birthdayMusic" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-funnysong.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="card" onclick="toggleContent()">
+  <div class="balloons">🎈🎉🎂</div>
+  <h2>Happy 21st Birthday, Fatimah!</h2>
+  <p class="content" id="cardContent">
+    Time to eat cake like nobody's watching 🍰<br>
+    Party like your Wi-Fi never drops! 💃📶<br><br>
+    May your day be filled with laughter, crazy adventures, and way too much chocolate 🍫<br>
+    Stay silly, stay amazing, and make this year unforgettable! 🎁
+  </p>
+</div>
+
+<script>
+  // Toggle content
+  function toggleContent() {
+    const content = document.getElementById('cardContent');
+    if(content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+      document.getElementById('birthdayMusic').play(); // Start music
+    } else {
+      content.style.display = 'none';
+      document.getElementById('birthdayMusic').pause(); // Pause music
+    }
+  }
+</script>
+
+</body>
+</html>
